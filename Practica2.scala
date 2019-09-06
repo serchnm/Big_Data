@@ -23,7 +23,15 @@ val s = collection.mutable.Set(1,3,3,4,6,7,3,7)
 print(s)
 // 6. Crea una mapa mutable llamado nombres que contenga los siguiente
 //     "Jose", 20, "Luis", 24, "Ana", 23, "Susana", "27"
+
 // 6 a . Imprime todas la llaves del mapa
+val mutmap = collection.mutable.Map(("Jose", 20), ("Luis", 24), ("Ana", 23) ,("Susana", 27))
+
+print(mutmap)
 
 // 7 b . Agrega el siguiente valor al mapa("Miguel", 23)
 
+mutmap += ("Miguel" -> 23)
+mutmap
+mutmap.keys
+mutmap.values

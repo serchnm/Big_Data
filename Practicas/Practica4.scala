@@ -1,23 +1,67 @@
 import org.apache.spark.sql.SparkSession
 
-val spar = SparkSession.builder().getOrCreate()
+val spark = SparkSession.builder().getOrCreate()
 
-val df = spark.read.option("header", "true").option("inferSchema","true")csv("ContainsNull.csv")
+val df = spark.read.option("header", "true").option("inferSchema","true")csv("CitiGroup2006_2008")
 
 df.printSchema()
 
-df.show()
+//1. Columns(i: Iavgnt)
+df.filter($"Close" < 480 && $"High" < 480).columns()
 
-df.na.drop().show()
-df.na.drop(2).show()
-df.na.fill(100).show()
-df.na.fill("Missing Name")
-df.na.fill("New name", Array("Name")).show() 
-df.na.fill(200, Array("Sales")).show() 
+//2. Count()
+df.filter($"Close" < 480 && $"High" < 480).count()
 
-df.describe().show()
-df.na.fill(400.5, Array("Sales")).show()
-df.na.fill("Missing name", Array("Name")).show()
+//3. Sort()
+df.sort($"Date".desc).show()
 
-val df2 =df.na.fill(400.5, Array("Sales"))
-df2.na.fill("Missing name", Array("Name")).show()
+//4.Take()
+df.select($"Date").take(5)
+
+//5. CollectAsList()
+df.filter($"Close" < 480 && $"High" < 480).collectAsList()
+
+//6. First()
+df.filter($"Close" < 480 && $"High" < 480).first()
+
+//7. groupBy()
+df.filter($"Close" < 480 && $"High" < 480).groupBy("Close")
+
+//8 dayofweek()
+df.select(dayofweek(df("Date"))).show()
+
+//9 dayofmonth()
+df.select(dayofmonth(df("Date"))).show()
+
+//10 dayofyear()
+df.select(dayofyear(df("Date"))).show()
+
+//11 weekofyear()
+df.select(weekofyear(df("Date"))).show()
+
+//12 last_day()
+df.select(last_day(df("Date"))).show()
+
+//13 repartition()
+df.select("Low").repartition().show()
+
+//14 distinct()
+df.select("Date").distinct().show()
+
+//15 sort()
+df.sort($"High".asc).show()
+
+//16 min()
+df.select(min("High")).show()
+
+//17 mean()
+df.select(mean("High")).show()
+
+//18 take()
+df.select($"Open").take(1)
+
+//19 max
+df.select(max("High")).show()
+
+//20 avg
+df.select(avg("High")).show()

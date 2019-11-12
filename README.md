@@ -1,6 +1,21 @@
 ## Unidad 2
 ---
-* [Practice1](#Correlation) | [HypothesisTesting](#HypothesingTesting) | [Summarizer](#Summarizer) 
+### Practice1
+* [Correlation](#Correlation) | [HypothesisTesting](#HypothesingTesting) | [Summarizer](#Summarizer) 
+### Practice2
+* [DecisionTreeClassifier](#DecisionTreeClassifier)
+### Practice3
+* [RandomForestClassifier](#RandomForestClassifier)
+### Practice4
+* [Gradienr-boostedTreeClassifier](#Gradienr-boostedTreeClassifier)
+### Practice5
+* [MultilayerPerceptronClassifier](#MultilayerPerceptronClassifier)
+### Practice6
+* [LinearSupportVectorMachine](#LinearSupportVectorMachine)
+### Practice7
+* [One-vs-RestClassifer](#One-vs-RestClassifer)
+### Practice8
+* [NaiveBayes](#NaiveBayes)
 ### Practice1
 #### Correlation
 Calculating the correlation between two series of data is a common operation in Statistics. In spark.ml we provide the flexibility to calculate pairwise correlations among many series. The supported correlation methods are currently Pearson’s and Spearman’s correlation.
@@ -70,7 +85,7 @@ The following example demonstrates using Summarizer to compute the mean and vari
 
     spark.stop()
 ### Practice2
-#### Decision tree classifier
+#### DecisionTreeClassifier
 The following examples load a dataset in LibSVM format, split it into training and test sets, train on the first dataset, and then evaluate on the held-out test set. We use two feature transformers to prepare the data; these help index categories for the label and categorical features, adding metadata to the DataFrame which the Decision Tree algorithm can recognize.
     
     import org.apache.spark.ml.Pipeline
@@ -113,7 +128,7 @@ The following examples load a dataset in LibSVM format, split it into training a
     
     
 ### Practice3
-#### Random forest classifier
+#### RandomForestClassifier
 The following examples load a dataset in LibSVM format, split it into training and test sets, train on the first dataset, and then evaluate on the held-out test set. We use two feature transformers to prepare the data; these help index categories for the label and categorical features, adding metadata to the DataFrame which the tree-based algorithms can recognize.
 
     import org.apache.spark.ml.Pipeline
@@ -149,7 +164,7 @@ val rfModel = model.stages(2).asInstanceOf[RandomForestClassificationModel]
 println(s"Learned classification forest model:\n ${rfModel.toDebugString}")
 
 ### Practice4
-#### Gradienr-boosted tree classifier
+#### Gradienr-boostedTreeClassifier
 The following examples load a dataset in LibSVM format, split it into training and test sets, train on the first dataset, and then evaluate on the held-out test set. We use two feature transformers to prepare the data; these help index categories for the label and categorical features, adding metadata to the DataFrame which the tree-based algorithms can recognize.
 
     import org.apache.spark.ml.Pipeline
@@ -185,7 +200,7 @@ The following examples load a dataset in LibSVM format, split it into training a
     println(s"Learned classification GBT model:\n ${gbtModel.toDebugString}")
 
 ### Practice5
-#### Multilayer perceptron classifier
+#### MultilayerPerceptronClassifier
 Multilayer perceptron classifier (MLPC) is a classifier based on the feedforward artificial neural network. MLPC consists of multiple layers of nodes. Each layer is fully connected to the next layer in the network. Nodes in the input layer represent the input data. All other nodes map inputs to outputs by a linear combination of the inputs with the node’s weights w w and bias b and applying an activation function.
 
     import org.apache.spark.ml.classification.MultilayerPerceptronClassifier
@@ -215,7 +230,7 @@ Multilayer perceptron classifier (MLPC) is a classifier based on the feedforward
     println(s"Test set accuracy = ${evaluator.evaluate(predictionAndLabels)}")
 
 ### Practice6
-#### Linear Support Vector Machine
+#### LinearSupportVectorMachine
 A support vector machine constructs a hyperplane or set of hyperplanes in a high- or infinite-dimensional space, which can be used for classification, regression, or other tasks. Intuitively, a good separation is achieved by the hyperplane that has the largest distance to the nearest training-data points of any class (so-called functional margin), since in general the larger the margin the lower the generalization error of the classifier. LinearSVC in Spark ML supports binary classification with linear SVM. Internally, it optimizes the Hinge Loss using OWLQN optimizer.
 
     import org.apache.spark.ml.classification.LinearSVC
@@ -229,7 +244,7 @@ A support vector machine constructs a hyperplane or set of hyperplanes in a high
     println(s"Coefficients: ${lsvcModel.coefficients} Intercept: ${lsvcModel.intercept}")
 
 ### Practice7
-#### One-vs-Rest classifer
+#### One-vs-RestClassifer
 The example below demonstrates how to load the Iris dataset, parse it as a DataFrame and perform multiclass classification using OneVsRest. The test error is calculated to measure the algorithm accuracy.
 
     import org.apache.spark.ml.classification.{LogisticRegression, OneVsRest}
@@ -253,7 +268,7 @@ The example below demonstrates how to load the Iris dataset, parse it as a DataF
     println(s"Test Error = ${1 - accuracy}")
 
 ### Practice8
-#### Naive Bayes
+#### NaiveBayes
 Naive Bayes is a simple multiclass classification algorithm with the assumption of independence between every pair of features. Naive Bayes can be trained very efficiently. Within a single pass to the training data, it computes the conditional probability distribution of each feature given label, and then it applies Bayes’ theorem to compute the conditional probability distribution of label given an observation and use it for prediction.
 
     import org.apache.spark.ml.classification.NaiveBayes

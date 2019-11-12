@@ -1,5 +1,6 @@
 ## Unidad 2
 ---
+* [Practice1](#Correlation) | [HypothesisTesting](#HypothesingTesting) | [Summarizer](#Summarizer) 
 ### Practice1
 #### Correlation
 Calculating the correlation between two series of data is a common operation in Statistics. In spark.ml we provide the flexibility to calculate pairwise correlations among many series. The supported correlation methods are currently Pearson’s and Spearman’s correlation.
@@ -18,7 +19,7 @@ Calculating the correlation between two series of data is a common operation in 
     val Row(coeff2: Matrix) = Correlation.corr(df, "features", "spearman").head
     println(s"Spearman correlation matrix:\n $coeff2")
 
-#### Hypothesis testing
+#### HypothesisTesting
 Hypothesis testing is a powerful tool in statistics to determine whether a result is statistically significant, whether this result occurred by chance or not.
 
     import org.apache.spark.ml.linalg.{Vector, Vectors}

@@ -1,13 +1,3 @@
-//////////////////////////////////////////////
-// Proyecto de regresion logistica //////////////
-////////////////////////////////////////////
-//////////////////////////////////////////////////////////
-// Complete las siguientes tareas que estan comentas ////
-/////////////////////////////////////////////////////////
-
-////////////////////////
-/// Tome los datos //////
-//////////////////////
 
 // Importacion de las librerias y apis de Logistic Regression
 import org.apache.spark.ml.classification.LogisticRegression
@@ -28,12 +18,6 @@ data.show()
 data.printSchema()
 
 
-///////////////////////
-/// Despliegue los datos /////
-/////////////////////
-
-// Impresion de un renglon de ejemplo 
-
 data.head(1)
 // creamos la variable colnames la cual contendra en un arreglo de string la informacion de la primera columna.
 val colnames = data.columns
@@ -48,12 +32,6 @@ for(ind <- Range(1, colnames.length)){
 }
 
 
-
-////////////////////////////////////////////////////
-//// Preparar el DataFrame para Machine Learning ////
-//////////////////////////////////////////////////
-
-//   Hacer lo siguiente:
 
 //    - Creamos una nueva clolumna llamada "Hour" del Timestamp conteniendo la  "Hour of the click"
 val timedata = data.withColumn("Hour",hour(data("Timestamp")))
@@ -70,14 +48,9 @@ val assembler = (new VectorAssembler()
                   .setOutputCol("features"))
 
 
-
 // Utilizamos randomSplit para crear datos de entrenamineto con 70% y de prueba 30% con los que estara interactuando nuestro algoritmo 
 val Array(training, test) = logregdata.randomSplit(Array(0.7, 0.3), seed = 12345)
 
-
-///////////////////////////////
-// Configure un Pipeline ///////
-/////////////////////////////
 
 // Importacion de la libreria de Pipeline
 import org.apache.spark.ml.Pipeline
@@ -93,9 +66,6 @@ val model = pipeline.fit(training)
 
 val results = model.transform(test)
 results.show()
-////////////////////////////////////
-//// Evaluacion del modelo /////////////
-//////////////////////////////////
 
 // Para la utilizacion de Metrics y Evaluation importamos la libreria de  MulticlassMetrics
 import org.apache.spark.mllib.evaluation.MulticlassMetrics

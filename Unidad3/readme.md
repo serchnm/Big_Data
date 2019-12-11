@@ -1,4 +1,4 @@
-#### Unit 3
+# Unit 3
 ---
 * [Kmeans](#Kmeans) | [Output](#K-means-Output)
 * [LogisticRegression](#LogisticRegression) | [OutPut](#LogisticRegression-Output)

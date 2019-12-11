@@ -1,6 +1,6 @@
 ## Theoretical framework
 #### Decision Tree
-* [Decisions Tree](#Decisions-Tree) | [Characteristics-of-a-decision-tree](#Characteristics-of-a-decision-tree) | [Advantage](#Advantage) | [Disadvantages](#Disadvantages) | (Code)[#Code1]
+* [Decisions Tree](#Decisions-Tree) | [Characteristics-of-a-decision-tree](#Characteristics-of-a-decision-tree) | [Advantage](#Advantage) | [Disadvantages](#Disadvantages) | [Code](#Code1)
 
 #### Logistic Regression
 * [Logistic-Regresion](#Logistic-Regresion) | [Logistic-Regression-types](#Logistic-Regression-types) | [Decision-limit](#Decision-limit) | [Code](#Code2)

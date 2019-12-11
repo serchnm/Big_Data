@@ -1,4 +1,11 @@
+#### Unit 3
+---
+* [Kmeans](#Kmeans) | [Output](#K-means-Output)
+* [LogisticRegression](#LogisticRegression) | [OutPut](#LogisticRegression-Output)
+* [Test](#Test) | [Output](#Test-Output)
+
 ### Kmeans
+---
             // Start a Spark Session
         import org.apache.spark.sql.SparkSession
 
@@ -27,7 +34,8 @@
         // Shows the result.
         println("Cluster Centers: ")
         model.clusterCenters.foreach(println)
-### K-means Output
+### K-means-Output
+---
         Loading kmeansExample.scala...
         import org.apache.spark.sql.SparkSession
         import org.apache.log4j._
@@ -44,7 +52,8 @@
         Cluster Centers:
         [0.1,0.1,0.1]
         [9.1,9.1,9.1]
-### Logistic Regresion
+### LogisticRegression
+---
       // Importacion de las librerias y apis de Logistic Regression
       import org.apache.spark.ml.classification.LogisticRegression
       //Importacion de la libreria de SparkSeccion
@@ -127,7 +136,8 @@
       println(metrics.confusionMatrix)
       // Imprimimos la exactitud de nuestra predicion la cual es de 0.97 la cual es muy buena.
       metrics.accuracy
-### Logistic Regresion Output
+### LogisticRegression-Output
+---
         logregdata: org.apache.spark.sql.DataFrame = [label: int, Daily Time Spent on Site: double ... 5 more fields]
         +-----+------------------------+---+-----------+--------------------+----+----+
         |label|Daily Time Spent on Site|Age|Area Income|Daily Internet Usage|Hour|Male|
@@ -165,6 +175,7 @@
         res15: Double = 0.9746031746031746
 
 ### Test
+---
       import org.apache.spark.sql.SparkSession
       import org.apache.spark.ml.feature.VectorAssembler
       import org.apache.spark.ml.linalg.Vectors
@@ -188,7 +199,8 @@
       // Show results
       println("Cluster Centers: ")
       model.clusterCenters.foreach(println)
-### Test Output
+### Test-Output
+---
         Within set sum of Squared Errors = 8.095172370767671E10
         Cluster Centers:
         [7993.574780058651,4196.803519061584,5837.4926686217,2546.624633431085,2016.2873900293255,1151.4193548387098]

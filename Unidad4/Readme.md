@@ -1,9 +1,26 @@
 ## Theoretical framework
-### Decisions Tree
+#### Decision Tree
+* [Decisions Tree](#Decisions-Tree) | [Characteristics-of-a-decision-tree](#Characteristics-of-a-decision-tree) | [Advantage](#Advantage) | [Disadvantages](#Disadvantages) | (Code)[#Code1]
+
+#### Logistic Regression
+* [Logistic-Regresion](#Logistic-Regresion) | [Logistic-Regression-types](#Logistic-Regression-types) | [Decision-limit](#Decision-limit) | [Code](#Code2)
+
+* [Logistic-RegressionvsDecision-Tree](#Logistic-RegressionvsDecision-Tree) | [Typeofdata](#Typeofdata) 
+
+#### Multilayer Perceptron
+* [MultilayerPerceptron](#MultilayerPerceptron) | [Code](#Code3)
+
+* [DecisionTreevsMultilayerPerceptron](#DecisionTreevsMultilayerPerceptron)
+
+* [Comparison](#Comparison)
+
+* [conclusion](#conclusion)
+
+### Decisions-Tree
 Decision Trees is a technique that allows analyzing sequential decisions based on the use of results and associated probabilities.
 Decision trees can be used to generate expert systems, binary searches and game trees
 
-### Characteristics of a decision tree
+### Characteristics-of-a-decision-tree
 • Poses the problem from different perspectives of action.
 • It allows a complete analysis of all possible solutions.
 • Provides a scheme to quantify the cost of the result and its probability of use.
@@ -252,6 +269,15 @@ The MLPs were a popular machine learning solution in the 1980s, finding applicat
 On the difference of the decision tree and multilayer perception have something curious that the decision tree is preferable for the selection of functions and Multilayer Perceptron for classification
 
 ### Comparison
+-----------------------------------------------------------------
+|   ID   |  ALGORITMO   |   MEMORIA |   TIEMPO  |   PRECISION   |   
+|   1    |  DECISIONTR  |   329MB   |   15s     |   0.89        |
+|   2    |  LOGREGRESS  |   462MB   |   11.92s  |   0.78        |
+|   3    |  MLPERCEPTOR |   574MB   |   13.62s  |   0.88        |
+|   1    |  DECISIONTR  |   448MB   |   8s      |   0.89        |
+|   2    |  LOGREGRESS  |   578MB   |   7.65s   |   0.78        |
+|   3    |  MLPERCEPTOR |   633MB   |   12.21s  |   0.88        |
+-----------------------------------------------------------------
 
 ### conclusion
 There are so many algorithms that can be used to classify our data at my own discretion I lean more towards the Decision Tree algorithm because it is very easy to understand and implement clearly that it does not have a linear order as logical regression but by speed of understanding and application it is An optimal algorithm for my use.

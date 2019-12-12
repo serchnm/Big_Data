@@ -270,3 +270,6 @@ On the difference of the decision tree and multilayer perception have something 
 
 ### conclusion
 There are so many algorithms that can be used to classify our data at my own discretion I lean more towards the Decision Tree algorithm because it is very easy to understand and implement clearly that it does not have a linear order as logical regression but by speed of understanding and application it is An optimal algorithm for my use.
+
+for the infomation about the graphics here below is the link where you can check it
+https://docs.google.com/document/d/137MM0gi7ayva83rYYVqD6NmRodsqR6pLgDwj11rg74k/edit#
